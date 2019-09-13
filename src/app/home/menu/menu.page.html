@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>menu {{ usuario }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        
+        <ion-button expand=full (click)="goVerContrato()" >Ver contratos</ion-button>
+      </ion-col>
+      <ion-col style="text-align: center;">
+          <ion-icon name="copy" style="font-size: 32px;"></ion-icon>          
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col style="text-align: center;">
+          Reportar entrega
+        </ion-col>
+        <ion-col style="text-align: center;">
+            <ion-icon name="cube" style="font-size: 32px;"></ion-icon>          
+        </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>
