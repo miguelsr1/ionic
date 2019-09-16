@@ -17,6 +17,6 @@ export class HomePage {
   ) {}
 
   validarUsuario(){
-    this.validar.validarUsuario(this.user, this.pass);
+    this.validar.validarUsuario(this.user.toUpperCase(), this.pass);
   }
 }

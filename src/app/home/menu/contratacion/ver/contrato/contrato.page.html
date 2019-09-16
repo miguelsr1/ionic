@@ -6,12 +6,22 @@
 
 <ion-content>
   <ion-item>
-    <ion-label>Hair Color</ion-label>
-    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+    <ion-label>Año</ion-label>
+    <ion-select [(ngModel)]="idAnho" (ionChange)="onSelectAnho()">
+      <ion-select-option *ngFor="let item of lstAnho" [value]="item.idAnho" >{{ item.anho }}</ion-select-option>
     </ion-select>
   </ion-item>
+  <ion-item>
+    <ion-label>Proceso </ion-label>
+    <ion-select [(ngModel)]="idProcesoAdq" (ionChange)="onSelectProceso()">
+      <ion-select-option *ngFor="let pro of lstProcesoAdq" [value]="pro.idProcesoAdq" >{{ pro.descripcionProcesoAdq }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Rubro </ion-label>
+    <ion-select [(ngModel)]="idRubro">
+      <ion-select-option *ngFor="let rub of lstRubroAdq" [value]="rub.idRubroInteres" >{{ rub.nombreCorto }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>

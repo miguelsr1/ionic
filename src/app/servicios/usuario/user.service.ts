@@ -20,7 +20,25 @@ export class UserService {
             data => {
                 const obj = (data as any);
                 const objJson = obj;
+                if(objJson['validar'] == true){
+                    console.log('antes de enviar: ' + user);
+                    this.router.navigate(['/menu', user]);
+                }else{
+                    console.log('error');
+                    this.presentToast(objJson['msj']);
+                }
+            }, error => {
+                this.presentToast('Servicio de validacion no disponible');
             }
         );
     }
+
+    async presentToast(msj: string) {
+        const toast = await this.toastController.create({
+          message: msj,
+          duration: 3000,
+          showCloseButton: true
+        });
+        toast.present();
+      }
 }
